@@ -63,14 +63,14 @@ fruits.pop()
  */
 
 const a = [1, 2, 3, 4, 5]
-console.log("A ", a);
-console.log(a.slice(1,3));
-console.log(a);
+// console.log("A ", a);
+// console.log(a.slice(1,3));
+// console.log(a);
 
 const b = [1, 2, 3, 4, 5]
-console.log("B ", a);
-console.log(b.splice(1,3));
-console.log(b);
+// console.log("B ", a);
+// console.log(b.splice(1,3));
+// console.log(b);
 
 /*
 A  [ 1, 2, 3, 4, 5 ]
@@ -83,5 +83,26 @@ B  [ 1, 2, 3, 4, 5 ]
 as u can clearly see the difference that how slice vs splice works
 slice returns a shallow copy of a portion of an array into a new array Object
 whereas splice changes the contents of the array by removing or replacing the existing elements or by adding them inplace
-note = in both the methods negative indices as params counts back from the end of the array
+note = in both the methods negative indices as params, counts back from the end of the array
 */
+
+const fruitNames = ['apple', 'mango', 'guava']
+const vegetableNames = ['Potato', 'onion', 'pumpkin']
+
+const merged = [...fruitNames, ...vegetableNames]
+// console.log(merged);
+
+const dummyArr = [1, 2, 3, [4, 5], 6, 7, [8, 9, [10, 11], 12], 13, 14]
+const flatEX = dummyArr.flat(Infinity)
+// console.log(flatEX);
+
+// console.log(Array.isArray('Lion')); // false
+// console.log(Array.isArray(dummyArr)); // true
+// console.log(Array.from('Atul')); // [ 'A', 't', 'u', 'l' ]
+// console.log(Array.from({name:'Atul'})); // [] interesting question may also come in interviews
+
+let x = 100;
+let y = 200;
+let z = 300;
+// console.log(Array.of(x, y, z)); // [ 100, 200, 300 ]
+
