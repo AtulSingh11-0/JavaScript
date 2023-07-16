@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async_1</title>
+  </head>
+  <body>
+    <h1>Hi this is Atul Singh</h1>
+    <button id="stop">Stop</button>
+    <script>
+      const printName = function () {
+        console.log("Name is > Atul Singh");
+      };
+      const changeHeading = function () {
+        document.querySelector("h1").innerHTML =
+          "I am currently an Undergraduate";
+        console.log("CHANGED");
+      };
+      /*
+        note here u should always pass the functions reference i.e. only printName and not printName() > as this will 1st execute itself without having a delay of 2000ms
+        */
+      // setTimeout(printName, 2000)
+
+      const change = setTimeout(changeHeading, 2000);
+      document.querySelector("#stop").addEventListener("click", function () {
+        clearTimeout(change);
+        console.log("STOPPED");
+      });
+    </script>
+  </body>
+</html>
